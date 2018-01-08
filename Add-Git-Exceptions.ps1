@@ -2,8 +2,6 @@ Param (
     [string]$Path
 )
 
-AddExceptions(GetGitPath($Path))
-
 Function GetGitPath {
     Param (
         [Parameter(Mandatory=$true)]
@@ -59,3 +57,5 @@ Function AddExceptions {
         $EXEKeyFullPath.SetValue("MitigationAuditOptions", $MitigationAuditOptions, [Microsoft.Win32.RegistryValueKind]::Binary)
     }
 }
+
+AddExceptions(GetGitPath($Path))
